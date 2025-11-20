@@ -1,0 +1,55 @@
+{
+    "supportMessageTypes": [
+        {
+            "publisher":[
+					"morai_msgs/EgoVehicleStatus",
+					"morai_msgs/SkidCtrlReport",
+					"morai_msgs/VehicleCollisionData",
+					"morai_msgs/ObjectStatusList",
+					"morai_msgs/CollisionData",
+					"morai_msgs/GetTrafficLightStatus",
+					"morai_msgs/IntersectionStatus",
+					"morai_msgs/MoraiSimProcStatus",
+					"autoware_auto_msgs/VehicleOdometry",
+					"autoware_auto_msgs/VehicleKinematicState",
+					"autoware_auto_msgs/VehicleStateReport",
+					"autoware_auto_vehicle_msgs/ControlModeReport",
+					"autoware_auto_vehicle_msgs/GearReport",
+					"autoware_auto_vehicle_msgs/SteeringReport",
+					"autoware_auto_vehicle_msgs/TurnIndicatorsReport",
+					"autoware_auto_vehicle_msgs/HazardLightsReport",
+					"autoware_auto_vehicle_msgs/VelocityReport",
+					"rosgraph_msgs/Clock",
+					"geometry_msgs/PoseStamped",
+					"geometry_msgs/PoseWithCovarianceStamped",
+                    "sensor_msgs/CameraInfo",
+					"sensor_msgs/CompressedImage",
+					"morai_msgs/GPSMessage",
+					"sensor_msgs/Imu"
+            ]
+        },
+        {
+            "subscriber":[
+                    "morai_msgs/CtrlCmd",
+					"morai_msgs/SkidCtrlCmd",
+					"morai_msgs/GhostMessage",
+					"morai_msgs/MultiEgoSetting",
+					"morai_msgs/SetTrafficLight",
+					"morai_msgs/IntersectionControl",
+					"morai_msgs/Lamps",
+					"morai_msgs/SensorPosControl",
+					"morai_msgs/ScenarioLoad",
+					"morai_msgs/SaveSensorData",
+					"autoware_auto_msgs/VehicleStateCommand",
+					"autoware_auto_msgs/VehicleControlCommand",
+					"autoware_auto_vehicle_msgs/ControlModeCommand",
+					"autoware_auto_vehicle_msgs/TurnIndicatorsCommand",
+					"autoware_auto_vehicle_msgs/HazardLightsCommand",
+					"autoware_auto_control_msgs/AckermannControlCommand",
+					"autoware_auto_vehicle_msgs/GearCommand",
+					"tier4_vehicle_msgs/VehicleEmergencyStamped"
+            ]
+        }
+    ]
+}
+					

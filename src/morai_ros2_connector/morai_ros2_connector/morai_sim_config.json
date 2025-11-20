@@ -1,0 +1,147 @@
+{
+	"VehicleInterface": [
+	{
+		"publisherList": [
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/SkidCtrlReport",
+							"Topic": "/SkidCtrlReport",
+							"frameID": "",
+							"childFrameID": ""
+				}
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/EgoVehicleStatus",
+							"Topic": "/Ego_topic",
+							"frameID": "base_link",
+							"childFrameID": ""
+				}
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/VehicleCollisionData",
+							"Topic": "/VehicleCollisionData",
+							"frameID": "VehicleCollisionData",
+							"childFrameID": ""
+				}
+
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/ObjectStatusList",
+							"Topic": "/Object_topic",
+							"frameID": "ObjectInfo",
+							"childFrameID": ""
+				}
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/CollisionData",
+							"Topic": "/CollisionData",
+							"frameID": "base_link",
+							"childFrameID": ""
+				}
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/MoraiSimProcStatus",
+							"Topic": "/sim/process/state/msg/MoraiSimProcStatus",
+							"frameID": "SimProcStatus",
+							"childFrameID": ""
+				}
+			}
+		]
+	},
+	{
+		"subscriberList": [
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/SkidCtrlCmd",
+							"Topic": "/SkidCtrlCmd",
+							"frameID": "",
+							"childFrameID": ""
+				}
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/MultiEgoSetting",
+							"Topic": "/ego_setting",
+							"frameID": "",
+							"childFrameID": ""
+				}
+			}
+		]
+	},
+	{
+		"serviceList": [
+		]
+	}
+    ],
+	"SensorInterface": [
+	{
+		"sensorConfigFileName": ""
+	},
+	{
+		"cameraList": [
+			{
+					"m_TargetUniqueID": 0,
+					"m_SensorUniqueID": 1,
+					"m_SensorType": 1,
+					"m_FrameRate": 60.0,
+					"ros2Config": {
+						"enable": true,
+						"messageType": "sensor_msgs/CompressedImage",
+						"Topic": "/image_jpeg/compressed",
+						"frameID": "",
+						"childFrameID": ""
+					}
+			}
+		]
+	},
+	{
+		"GPSList": [
+			{
+					"m_TargetUniqueID": 0,
+					"m_SensorUniqueID": 2,
+					"m_SensorType": 1,
+					"m_FrameRate": 60.0,
+					"ros2Config": {
+						"enable": true,
+						"messageType": "morai_msgs/GPSMessage",
+						"Topic": "/gps",
+						"frameID": "",
+						"childFrameID": ""
+					}
+			}
+		]
+	},
+	{
+		"IMUList": [
+			{
+					"m_TargetUniqueID": 0,
+					"m_SensorUniqueID": 3,
+					"m_SensorType": 1,
+					"m_FrameRate": 60.0,
+					"ros2Config": {
+						"enable": true,
+						"messageType": "sensor_msgs/Imu",
+						"Topic": "/Imu",
+						"frameID": "",
+						"childFrameID": ""
+					}
+			}
+		]
+	}
+	],
+	"MiscInterface": [
+	]
+}
