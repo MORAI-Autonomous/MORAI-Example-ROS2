@@ -1,15 +1,15 @@
-from morai_msgs.srv import MoraiEventCmdSrv
+from morai_ros2_msgs.srv import EventCmd
 import rclpy
 from rclpy.node import Node
 
 
 class ClientEventCmdAsync(Node):
     def __init__(self):
-        super().__init__("MoraiEventCmdSrv")
-        self.client_ = self.create_client(MoraiEventCmdSrv, "morai_msgs/MoraiEventCmdSrv")
+        super().__init__("EventCmd")
+        self.client_ = self.create_client(EventCmd, "/event_cmd")
         while not self.client_.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("service not available, waiting ...")
-        self.msg_ = MoraiEventCmdSrv.Request()
+        self.msg_ = EventCmd.Request()
 
     def send_request(self):
         self.msg_.request.option = 1

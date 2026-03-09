@@ -5,15 +5,14 @@ from rclpy.qos import QoSHistoryPolicy
 from rclpy.qos import QoSProfile
 from rclpy.qos import QoSReliabilityPolicy
 
-from morai_msgs.msg import EgoVehicleStatus
+from morai_ros2_msgs.msg import EgoVehicleStatus
 
 
 class SubEgoVehicleStatus(Node):
     def __init__(self):
         super().__init__("EgoVehicleStatus")
         
-        self.received = []
-        self.topic = "/Ego_topic"
+        self.topic = "/ego_vehicle_status"
         self.declare_parameter("qos_depth", 10)
         qos_depth = self.get_parameter("qos_depth").value
         QoS_RKL10V = QoSProfile(
@@ -25,8 +24,7 @@ class SubEgoVehicleStatus(Node):
         self.subscription = self.create_subscription(EgoVehicleStatus, self.topic, self.callback, QoS_RKL10V)
   
     def callback(self, msg):
-        self.received.append(msg)
-        #self.get_logger().info(f'[Subscription] {self.topic} : {msg}')
+        self.get_logger().info(f'[Subscription] {self.topic} : {msg}')
 
 def main(args=None):
     rclpy.init(args=args)

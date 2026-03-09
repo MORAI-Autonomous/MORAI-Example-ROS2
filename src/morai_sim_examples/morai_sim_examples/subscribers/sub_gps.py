@@ -5,7 +5,7 @@ from rclpy.qos import QoSHistoryPolicy
 from rclpy.qos import QoSProfile
 from rclpy.qos import QoSReliabilityPolicy
 
-from morai_msgs.msg import GPSMessage
+from morai_ros2_msgs.msg import GPSMessage
 
 
 class SubGPSMessage(Node):
@@ -16,7 +16,7 @@ class SubGPSMessage(Node):
         self.declare_parameter("qos_depth", 10)
         qos_depth = self.get_parameter("qos_depth").value
         QoS_RKL10V = QoSProfile(
-            reliability=QoSReliabilityPolicy.RELIABLE,
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=qos_depth,
             durability=QoSDurabilityPolicy.VOLATILE,

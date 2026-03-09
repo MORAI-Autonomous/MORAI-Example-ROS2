@@ -4,12 +4,19 @@ import cv2
 import numpy as np
 from sensor_msgs.msg import CompressedImage
 from cv_bridge import CvBridge, CvBridgeError
+from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy, QoSDurabilityPolicy
 
 class SubCompressedImage(Node):
   def __init__(self) -> None:
     super().__init__("CameraSensor")
     self.bridge = CvBridge()
-    self.subscription = self.create_subscription(CompressedImage, "/image_jpeg/compressed", self.callback, 10)
+    QoS_RKL10V = QoSProfile(
+      reliability=QoSReliabilityPolicy.BEST_EFFORT,
+      history=QoSHistoryPolicy.KEEP_LAST,
+      depth=10,
+      durability=QoSDurabilityPolicy.VOLATILE,
+    )
+    self.subscription = self.create_subscription(CompressedImage, "/camera/image/compressed", self.callback, QoS_RKL10V)
   
   def callback(self, data):
     cv_image = self.bridge.compressed_imgmsg_to_cv2(data, "bgr8")

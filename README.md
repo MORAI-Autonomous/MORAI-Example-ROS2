@@ -8,7 +8,6 @@ Check that your MORAI SIM is configured correctly for communicating over ROS2 wi
 ├── release
 │    └── morai_ros2_bridge_<version>  # bridge script to connect MORAI SIM with ROS2
 └── src          
-     ├── morai_ros2_connector         # script for MORAI Simulator to open ROS2 service
      ├── morai_ros2_msgs              # MORAI Simulator ROS2 message set (submodule)
      └── morai_sim_examples           # example ros2 nodes and unit testing code
 ```
@@ -33,9 +32,7 @@ Check that your MORAI SIM is configured correctly for communicating over ROS2 wi
 
 ### Dependencies with MORAI SIM
 
-This example repository is compatible up to MORAI SIM 24.R2.H2.
-
-With the release of 26.R1., ROS2 Humble is natively supported by the simulator, no longer requiring the `morai_ros2_connector` script to connect to the ROS2 network.
+This example repository is compatible up to MORAI SIM 26.R1.
 
 ## Setup
 
@@ -43,6 +40,8 @@ With the release of 26.R1., ROS2 Humble is natively supported by the simulator, 
 $ mkdir ~/ws_morai_sim_example
 $ cd ~/ws_morai_sim_example
 $ git clone https://github.com/MORAI-Autonomous/MORAI-Example-ROS2.git
+$ cd MORAI-Example-ROS2
+$ git submodule update --init --recursive
 $ source /opt/ros/<your ROS2 version>/setup.bash
 $ colcon build
 $ source /install/setup.bash
@@ -52,10 +51,8 @@ $ source /install/setup.bash
 
 ```bash
 $ source /install/setup.bash
-$ ./morai_ros2_bridge_<ros2 version>
+$ ros2 run morai_sim_examples <expected node>
 ```
-
-If successful, the terminal should show: `MORAI Bridge: <version>`, followed by connection information.
 
 ## Troubleshooting
 

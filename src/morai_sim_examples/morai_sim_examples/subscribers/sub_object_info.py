@@ -5,13 +5,14 @@ from rclpy.qos import QoSHistoryPolicy
 from rclpy.qos import QoSProfile
 from rclpy.qos import QoSReliabilityPolicy
 
-from morai_msgs.msg import ObjectStatusList
+from morai_ros2_msgs.msg import ObjectStatusList
 
 
 class SubObjectInfo(Node):
     def __init__(self):
         super().__init__("ObjectInfo")
-        self.topic = "/Object_topic"
+        
+        self.topic = "/object_status"
         self.declare_parameter("qos_depth", 10)
         qos_depth = self.get_parameter("qos_depth").value
         QoS_RKL10V = QoSProfile(

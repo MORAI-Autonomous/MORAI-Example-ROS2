@@ -3,7 +3,7 @@ from enum import Enum
 import rclpy
 from rclpy.node import Node
 
-from morai_msgs.msg import SetTrafficLight
+from morai_ros2_msgs.msg import SetTrafficLight
 
 
 """ 신호등 색상 """
@@ -56,14 +56,18 @@ class LightColors(Enum):
 class PubSetTrafficLight(Node):
     def __init__(self):
         super().__init__("SetTrafficLight")
-        self.topic = '/SetTrafficLight'
+        self.topic = '/traffic_light_control'
         self.publisher_ = self.create_publisher(SetTrafficLight, self.topic, 10)
-  
-    def publish_msg(self, param):
+        
+        timer_period = 1
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+    
+    def timer_callback(self):
         msg = SetTrafficLight()
-        msg.traffic_light_index = param['traffic_light_index']
-        msg.traffic_light_status = param['traffic_light_status']
+        msg.traffic_light_index = 'C119BS010029'
+        msg.traffic_light_status = -1
         self.publisher_.publish(msg)
+        self.get_logger().info(f'Publishing on {self.topic} : {msg}')
 
 def main(args=None):
     rclpy.init(args=args)

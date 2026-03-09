@@ -1,12 +1,12 @@
 import rclpy
 from rclpy.node import Node
 
-from morai_msgs.msg import MultiEgoSetting
+from morai_ros2_msgs.msg import MultiEgoSetting
 
 class PubMultiEgoSetting(Node):
   def __init__(self):
     super().__init__("MultiEgoSetting")
-    self.publisher_ = self.create_publisher(MultiEgoSetting, '/ego_setting', 10)
+    self.publisher_ = self.create_publisher(MultiEgoSetting, '/multi_ego_setting', 10)
     timer_period = 1
     self.timer = self.create_timer(timer_period, self.timer_callback)
     self.i = 0

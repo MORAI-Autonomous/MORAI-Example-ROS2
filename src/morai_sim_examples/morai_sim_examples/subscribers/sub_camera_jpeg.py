@@ -12,11 +12,11 @@ class SubCompressedImage(Node):
     def __init__(self):
         super().__init__("CompressedImage")
 
-        self.topic = "/image_jpeg/compressed"
+        self.topic = "/camera/image/compressed"
         self.declare_parameter("qos_depth", 10)
         qos_depth = self.get_parameter("qos_depth").value
         QoS_RKL10V = QoSProfile(
-            reliability=QoSReliabilityPolicy.RELIABLE,
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=qos_depth,
             durability=QoSDurabilityPolicy.VOLATILE,

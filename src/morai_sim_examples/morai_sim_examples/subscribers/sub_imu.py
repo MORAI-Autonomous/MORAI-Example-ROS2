@@ -16,7 +16,7 @@ class SubImuMessage(Node):
         self.declare_parameter("qos_depth", 10)
         qos_depth = self.get_parameter("qos_depth").value
         QoS_RKL10V = QoSProfile(
-            reliability=QoSReliabilityPolicy.RELIABLE,
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=qos_depth,
             durability=QoSDurabilityPolicy.VOLATILE,
