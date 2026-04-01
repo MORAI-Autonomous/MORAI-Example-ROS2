@@ -25,7 +25,9 @@
                     "sensor_msgs/CameraInfo",
 					"sensor_msgs/CompressedImage",
 					"morai_msgs/GPSMessage",
-					"sensor_msgs/Imu"
+					"sensor_msgs/Imu",
+					"tf2_msgs/TFMessage",
+					"sensor_msgs/PointCloud2"
             ]
         },
         {

@@ -56,6 +56,15 @@
 							"frameID": "SimProcStatus",
 							"childFrameID": ""
 				}
+			},
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "tf2_msgs/TFMessage",
+							"Topic": "/tf",
+							"frameID": "/map",
+							"childFrameID": "/base_link"
+				}
 			}
 		]
 	},
@@ -88,20 +97,20 @@
     ],
 	"SensorInterface": [
 	{
-		"sensorConfigFileName": ""
+		"sensorConfigFileName": "ros2_cam_gps_imu_lidar.json"
 	},
 	{
 		"cameraList": [
 			{
 					"m_TargetUniqueID": 0,
-					"m_SensorUniqueID": 1,
+					"m_SensorUniqueID": 3,
 					"m_SensorType": 1,
 					"m_FrameRate": 60.0,
 					"ros2Config": {
 						"enable": true,
 						"messageType": "sensor_msgs/CompressedImage",
 						"Topic": "/image_jpeg/compressed",
-						"frameID": "",
+						"frameID": "Camera-3",
 						"childFrameID": ""
 					}
 			}
@@ -111,14 +120,14 @@
 		"GPSList": [
 			{
 					"m_TargetUniqueID": 0,
-					"m_SensorUniqueID": 2,
-					"m_SensorType": 1,
+					"m_SensorUniqueID": 1,
+					"m_SensorType": 4,
 					"m_FrameRate": 60.0,
 					"ros2Config": {
 						"enable": true,
 						"messageType": "morai_msgs/GPSMessage",
 						"Topic": "/gps",
-						"frameID": "",
+						"frameID": "GPS-1",
 						"childFrameID": ""
 					}
 			}
@@ -128,14 +137,31 @@
 		"IMUList": [
 			{
 					"m_TargetUniqueID": 0,
-					"m_SensorUniqueID": 3,
-					"m_SensorType": 1,
+					"m_SensorUniqueID": 2,
+					"m_SensorType": 5,
 					"m_FrameRate": 60.0,
 					"ros2Config": {
 						"enable": true,
 						"messageType": "sensor_msgs/Imu",
-						"Topic": "/Imu",
+						"Topic": "/imu",
 						"frameID": "",
+						"childFrameID": ""
+					}
+			}
+		]
+	},
+	{
+		"LidarList": [
+			{
+					"m_TargetUniqueID": 0,
+					"m_SensorUniqueID": 4,
+					"m_SensorType": 2,
+					"m_FrameRate": 10.0,
+					"ros2Config": {
+						"enable": true,
+						"messageType": "sensor_msgs/PointCloud2",
+						"Topic": "/lidar3D",
+						"frameID": "Lidar3D-4",
 						"childFrameID": ""
 					}
 			}

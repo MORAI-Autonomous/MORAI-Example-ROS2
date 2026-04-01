@@ -14,8 +14,8 @@ from morai_msgs.msg import MoraiSimConfig
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 file_path = current_path+'/'
-# file_name = 'morai_sim_ros2_config.json'
-file_name = 'morai_sim_sensor_1cam.json'
+file_name = 'morai_sim_ros2_config.json'
+# file_name = 'morai_sim_sensor_1cam.json'
 
 
 class MoraiConfigFileHandler:
@@ -35,7 +35,7 @@ class MoraiConfigFileHandler:
             converted['GPSList'].extend(data['SensorInterface'][2]['GPSList'] if 'GPSList' in data['SensorInterface'][2] else [])
             converted['IMUList'].extend(data['SensorInterface'][3]['IMUList'] if 'IMUList' in data['SensorInterface'][3] else [])
             converted['LidarList'].extend(data['SensorInterface'][4]['LidarList'] if 'LidarList' in data['SensorInterface'][4] else [])
-            converted['RadarList'].extend(data['SensorInterface'][5]['RadarList'] if 'RadarList' in data['SensorInterface'][5] else [])
+            # converted['RadarList'].extend(data['SensorInterface'][5]['RadarList'] if 'RadarList' in data['SensorInterface'][5] else [])
             self.__check_publisher_validity(converted['publisherList'])
 
             converted['subscriberList'].extend(data['VehicleInterface'][1]['subscriberList'] if 'subscriberList' in data['VehicleInterface'][1] else [])
@@ -85,7 +85,7 @@ class PublisherMoraiSimSetup(Node):
         msg.gps_list = json.JSONEncoder().encode(morai_sim_config['GPSList'][:])
         msg.imu_list = json.JSONEncoder().encode(morai_sim_config['IMUList'][:])
         msg.lidar_list = json.JSONEncoder().encode(morai_sim_config['LidarList'][:])
-        msg.radar_list = json.JSONEncoder().encode(morai_sim_config['RadarList'][:])
+        # msg.radar_list = json.JSONEncoder().encode(morai_sim_config['RadarList'][:])
         self.publisher_.publish(msg)
         self.done = True
 
