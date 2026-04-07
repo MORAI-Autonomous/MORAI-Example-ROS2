@@ -12,12 +12,12 @@ class ClientEventCmdAsync(Node):
         self.msg_ = MoraiEventCmdSrv.Request()
 
     def send_request(self):
-        self.msg_.request.option = 1
-        self.msg_.request.ctrl_mode = 3
-        self.msg_.request.gear = 0
-        self.msg_.request.lamps.turn_signal = 0
-        self.msg_.request.lamps.emergency_signal = 0
-        self.msg_.request.set_pause = False
+        self.msg_.option = 1
+        self.msg_.ctrl_mode = 3
+        self.msg_.gear = 0
+        self.msg_.lamps.turn_signal = 0
+        self.msg_.lamps.emergency_signal = 0
+        self.msg_.set_pause = False
         self.future = self.client_.call_async(self.msg_)
 
 

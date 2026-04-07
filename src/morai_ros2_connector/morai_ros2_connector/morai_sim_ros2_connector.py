@@ -14,8 +14,8 @@ from morai_msgs.msg import MoraiSimConfig
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 file_path = current_path+'/'
-# file_name = 'morai_sim_ros2_config.json'
-file_name = 'morai_sim_sensor_1cam.json'
+file_name = 'morai_sim_ros2_config.json'
+# file_name = 'morai_sim_sensor_1cam.json'
 
 
 class MoraiConfigFileHandler:
@@ -34,8 +34,8 @@ class MoraiConfigFileHandler:
             converted['cameraList'].extend(data['SensorInterface'][1]['cameraList'] if 'cameraList' in data['SensorInterface'][1] else [])
             converted['GPSList'].extend(data['SensorInterface'][2]['GPSList'] if 'GPSList' in data['SensorInterface'][2] else [])
             converted['IMUList'].extend(data['SensorInterface'][3]['IMUList'] if 'IMUList' in data['SensorInterface'][3] else [])
-            converted['LidarList'].extend(data['SensorInterface'][4]['LidarList'] if 'LidarList' in data['SensorInterface'][4] else [])
-            converted['RadarList'].extend(data['SensorInterface'][5]['RadarList'] if 'RadarList' in data['SensorInterface'][5] else [])
+            converted['LidarList'].extend(data['SensorInterface'][4]['LidarList'] if len(data['SensorInterface']) > 4 and 'LidarList' in data['SensorInterface'][4] else [])
+            converted['RadarList'].extend(data['SensorInterface'][5]['RadarList'] if len(data['SensorInterface']) > 5 and 'RadarList' in data['SensorInterface'][5] else [])
             self.__check_publisher_validity(converted['publisherList'])
 
             converted['subscriberList'].extend(data['VehicleInterface'][1]['subscriberList'] if 'subscriberList' in data['VehicleInterface'][1] else [])
