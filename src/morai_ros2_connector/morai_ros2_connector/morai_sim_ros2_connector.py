@@ -10,7 +10,7 @@ from rclpy.qos import QoSHistoryPolicy
 from rclpy.qos import QoSProfile
 from rclpy.qos import QoSReliabilityPolicy
 
-from morai_msgs.msg import MoraiSimConfig
+from morai_msgs.msg import MoraiSimConfig  # sourced separately with ROS2
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 file_path = current_path+'/'
@@ -36,6 +36,7 @@ class MoraiConfigFileHandler:
             converted['IMUList'].extend(data['SensorInterface'][3]['IMUList'] if 'IMUList' in data['SensorInterface'][3] else [])
             converted['LidarList'].extend(data['SensorInterface'][4]['LidarList'] if len(data['SensorInterface']) > 4 and 'LidarList' in data['SensorInterface'][4] else [])
             converted['RadarList'].extend(data['SensorInterface'][5]['RadarList'] if len(data['SensorInterface']) > 5 and 'RadarList' in data['SensorInterface'][5] else [])
+            converted['TFList'].extend(data['SensorInterface'][6]['TFList'] if len(data['SensorInterface']) > 6 and 'TFList' in data['SensorInterface'][6] else [])
             self.__check_publisher_validity(converted['publisherList'])
 
             converted['subscriberList'].extend(data['VehicleInterface'][1]['subscriberList'] if 'subscriberList' in data['VehicleInterface'][1] else [])
@@ -86,6 +87,7 @@ class PublisherMoraiSimSetup(Node):
         msg.imu_list = json.JSONEncoder().encode(morai_sim_config['IMUList'][:])
         msg.lidar_list = json.JSONEncoder().encode(morai_sim_config['LidarList'][:])
         msg.radar_list = json.JSONEncoder().encode(morai_sim_config['RadarList'][:])
+        msg.tf_list = json.JSONEncoder().encode(morai_sim_config['TFList'][:])
         self.publisher_.publish(msg)
         self.done = True
 

@@ -10,6 +10,7 @@
 					"morai_msgs/GetTrafficLightStatus",
 					"morai_msgs/IntersectionStatus",
 					"morai_msgs/MoraiSimProcStatus",
+					"morai_msgs/GPSMessage",
 					"autoware_auto_msgs/VehicleOdometry",
 					"autoware_auto_msgs/VehicleKinematicState",
 					"autoware_auto_msgs/VehicleStateReport",
@@ -24,8 +25,9 @@
 					"geometry_msgs/PoseWithCovarianceStamped",
                     "sensor_msgs/CameraInfo",
 					"sensor_msgs/CompressedImage",
-					"morai_msgs/GPSMessage",
-					"sensor_msgs/Imu"
+					"sensor_msgs/Imu",
+					"sensor_msgs/PointCloud2",
+					"tf2_msgs/TFMessage"
             ]
         },
         {

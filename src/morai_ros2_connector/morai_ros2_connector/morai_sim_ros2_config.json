@@ -96,7 +96,7 @@
 					"m_TargetUniqueID": 0,
 					"m_SensorUniqueID": 1,
 					"m_SensorType": 1,
-					"m_FrameRate": 60.0,
+					"m_FrameRate": 30.0,
 					"ros2Config": {
 						"enable": true,
 						"messageType": "sensor_msgs/CompressedImage",
@@ -111,9 +111,9 @@
 		"GPSList": [
 			{
 					"m_TargetUniqueID": 0,
-					"m_SensorUniqueID": 2,
-					"m_SensorType": 1,
-					"m_FrameRate": 60.0,
+					"m_SensorUniqueID": 3,
+					"m_SensorType": 4,
+					"m_FrameRate": 10.0,
 					"ros2Config": {
 						"enable": true,
 						"messageType": "morai_msgs/GPSMessage",
@@ -128,8 +128,8 @@
 		"IMUList": [
 			{
 					"m_TargetUniqueID": 0,
-					"m_SensorUniqueID": 3,
-					"m_SensorType": 1,
+					"m_SensorUniqueID": 2,
+					"m_SensorType": 5,
 					"m_FrameRate": 60.0,
 					"ros2Config": {
 						"enable": true,
@@ -138,6 +138,40 @@
 						"frameID": "",
 						"childFrameID": ""
 					}
+			}
+		]
+	},
+	{
+		"LidarList": [
+			{
+					"m_TargetUniqueID": 0,
+					"m_SensorUniqueID": 4,
+					"m_SensorType": 2,
+					"m_FrameRate": 10.0,
+					"ros2Config": {
+						"enable": true,
+						"messageType": "sensor_msgs/PointCloud2",
+						"Topic": "/lidar/pointcloud",
+						"frameID": "",
+						"childFrameID": ""
+					}
+			}
+		]
+	},
+	{
+		"RadarList": [
+		]
+	},
+	{
+		"TFList": [
+			{
+				"ros2Config": {
+					"enable": true,
+					"messageType": "tf2_msgs/TFMessage",
+					"Topic": "/tf",
+					"frameID": "",
+					"childFrameID": ""
+				}
 			}
 		]
 	}
