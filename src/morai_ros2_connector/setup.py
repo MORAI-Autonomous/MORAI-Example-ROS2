@@ -23,7 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'morai_sim_ros2_connector = morai_ros2_connector.morai_sim_ros2_connector:main'
+            'morai_sim_ros2_connector = morai_ros2_connector.morai_sim_ros2_connector:main',
+            'morai_tf2_ros2_publisher = morai_ros2_connector.morai_tf2_ros2_publisher:main',
         ],
     },
 )

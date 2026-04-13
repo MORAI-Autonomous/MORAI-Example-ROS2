@@ -1,164 +1,179 @@
 {
 	"VehicleInterface": [
-	{
-		"publisherList": [{
-			"ros2Config": {
+		{
+			"publisherList": [
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "morai_msgs/EgoVehicleStatus",
 						"Topic": "/Ego_topic",
 						"frameID": "base_link",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/ControlModeReport",
 						"Topic": "/vehicle/status/control_mode",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/GearReport",
 						"Topic": "/vehicle/status/gear_status",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/SteeringReport",
 						"Topic": "/vehicle/status/steering_status",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/TurnIndicatorsReport",
 						"Topic": "/vehicle/status/turn_indicators_status",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/HazardLightsReport",
 						"Topic": "/vehicle/status/hazard_lights_status",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/VelocityReport",
 						"Topic": "/vehicle/status/velocity_status",
 						"frameID": "base_link",
 						"childFrameID": ""
-			}
-		},
-        {
-			"m_SensorUniqueID": 1,
-			"ros2Config": {
+					}
+				},
+				{
+					"m_SensorUniqueID": 1,
+					"ros2Config": {
 						"enable": true,
 						"messageType": "sensor_msgs/CameraInfo",
 						"Topic": "/sensing/camera/traffic_light/camera_info_1",
 						"frameID": "traffic_light_left_camera/camera_link",
 						"childFrameID": ""
-			}
-		},
-        {
-			"m_SensorUniqueID": 2,
-			"ros2Config": {
+					}
+				},
+				{
+					"m_SensorUniqueID": 2,
+					"ros2Config": {
 						"enable": true,
 						"messageType": "sensor_msgs/CameraInfo",
 						"Topic": "/sensing/camera/traffic_light/camera_info_2",
 						"frameID": "traffic_light_left_camera/camera_link",
 						"childFrameID": ""
-			}
-		},
-        {
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "geometry_msgs/PoseStamped",
 						"Topic": "/sensing/gnss/pose",
 						"frameID": "gnss_link",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "geometry_msgs/PoseWithCovarianceStamped",
 						"Topic": "/sensing/gnss/pose_with_covariance",
 						"frameID": "gnss_link",
 						"childFrameID": ""
-			}
-		}]
-    },
-	{
-		"subscriberList": [{
-			"ros2Config": {
+					}
+				}
+			]
+		},
+		{
+			"subscriberList": [
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/ControlModeCommand",
 						"Topic": "/control/command/control_mode_cmd",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/TurnIndicatorsCommand",
 						"Topic": "/control/command/turn_indicators_cmd",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/HazardLightsCommand",
 						"Topic": "/control/command/hazard_lights_cmd",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_control_msgs/AckermannControlCommand",
 						"Topic": "/control/command/control_cmd",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "autoware_auto_vehicle_msgs/GearCommand",
 						"Topic": "/control/command/gear_cmd",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		},{
-			"ros2Config": {
+					}
+				},
+				{
+					"ros2Config": {
 						"enable": true,
 						"messageType": "tier4_vehicle_msgs/VehicleEmergencyStamped",
 						"Topic": "/control/command/emergency_cmd",
 						"frameID": "",
 						"childFrameID": ""
-			}
-		}]
-	},
-	{
-		"serviceList": [
-		]
-	}
-    ],
+					}
+				}
+			]
+		},
+		{
+			"serviceList": []
+		}
+	],
 	"SensorInterface": [
-	{
-		"sensorConfigFileName": "sensor_1cam.json"
-	},
-	{
-		"cameraList": [
-			{
+		{
+			"sensorConfigFileName": "sensor_1cam.json"
+		},
+		{
+			"cameraList": [
+				{
 					"m_TargetUniqueID": 0,
 					"m_SensorUniqueID": 1,
 					"m_SensorType": 1,
@@ -170,26 +185,15 @@
 						"frameID": "traffic_light_left_camera/camera_link",
 						"childFrameID": ""
 					}
-			}
-		]
-	},
-	{
-		"GPSList": [
-        ]
-	},
-	{
-		"IMUList": [
-		]
-	},
-	{
-		"LidarList": [
-		]
-	},
-	{
-		"RadarList": [
-		]
-	}
+				}
+			]
+		},
+		{
+			"GPSList": []
+		},
+		{
+			"IMUList": []
+		}
 	],
-	"MiscInterface": [
-	]
+	"MiscInterface": []
 }

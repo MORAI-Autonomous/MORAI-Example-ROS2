@@ -13,7 +13,7 @@ Check that your MORAI SIM is configured correctly for communicating over ROS2 wi
      └── morai_sim_examples           # example ros2 nodes and unit testing code
 ```
 
-## Requirements
+## Dependencies
 
 - **Notice**: we will be slowly phasing out support for sunsetted versions of ROS2 such as Eloquent and Foxy.
 
@@ -39,6 +39,8 @@ With the release of 26.R1., ROS2 Humble is natively supported by the simulator, 
 
 ## Setup
 
+Build a ROS2 workspace with the ROS2 distro/version you are using.
+
 ```bash
 $ mkdir ~/ws_morai_sim_example
 $ cd ~/ws_morai_sim_example
@@ -50,12 +52,23 @@ $ source /install/setup.bash
 
 ## Use
 
+Connecting MORAI SIM to ROS2 nodes is a two step process.
+
+**Step 1**: Start the bridge executable
+
 ```bash
 $ source /install/setup.bash
-$ ./morai_ros2_bridge_<ros2 version>
+$ ./morai_ros2_bridge_<your ROS2 version>
 ```
 
 If successful, the terminal should show: `MORAI Bridge: <version>`, followed by connection information.
+
+**Step 2**: Run the connector python script
+
+```bash
+$ pip install -e src/morai_ros2_connector/
+$ python3 src/morai_ros2_connector/morai_ros2_connector/morai_sim_ros2_connector.py
+```
 
 ## Troubleshooting
 
