@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             'morai_sim_ros2_connector = morai_ros2_connector.morai_sim_ros2_connector:main',
             'morai_tf2_ros2_publisher = morai_ros2_connector.morai_tf2_ros2_publisher:main',
+            'morai_camera_info_publisher = morai_ros2_connector.morai_camera_info_publisher:main',
         ],
     },
 )
