@@ -49,6 +49,11 @@
 					"autoware_auto_vehicle_msgs/GearCommand",
 					"tier4_vehicle_msgs/VehicleEmergencyStamped"
             ]
+        },
+        {
+            "service":[
+					"morai_msgs/MoraiEventCmdSrv"
+            ]
         }
     ]
 }

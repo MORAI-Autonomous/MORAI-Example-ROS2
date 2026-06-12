@@ -83,6 +83,15 @@
 	},
 	{
 		"serviceList": [
+			{
+				"ros2Config": {
+							"enable": true,
+							"messageType": "morai_msgs/MoraiEventCmdSrv",
+							"Topic": "/Service_MoraiEventCmd",
+							"frameID": "",
+							"childFrameID": ""
+				}
+			}
 		]
 	}
     ],

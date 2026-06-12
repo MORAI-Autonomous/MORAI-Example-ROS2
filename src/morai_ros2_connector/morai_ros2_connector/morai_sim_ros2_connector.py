@@ -42,6 +42,8 @@ class MoraiConfigFileHandler:
             self.__check_subscriber_validity(converted['subscriberList'])
 
             converted['serviceList'].extend(data['VehicleInterface'][2]['serviceList'] if 'serviceList' in data['VehicleInterface'][2] else [])
+            self.__check_service_validity(converted['serviceList'])
+
             converted['sensorConfigFileName'] = data['SensorInterface'][0]['sensorConfigFileName'] if 'sensorConfigFileName' in data['SensorInterface'][0] else ""
             return converted
     
@@ -53,6 +55,11 @@ class MoraiConfigFileHandler:
     def __check_subscriber_validity(self, config):
         for item in config:
             if (item['ros2Config']['messageType'] not in self.support_type_list['supportMessageTypes'][1]['subscriber']):
+                raise Exception(f"Unsupported Message Type, {item['ros2Config']['messageType']}")
+
+    def __check_service_validity(self, config):
+        for item in config:
+            if (item['ros2Config']['messageType'] not in self.support_type_list['supportMessageTypes'][2]['service']):
                 raise Exception(f"Unsupported Message Type, {item['ros2Config']['messageType']}")
     
 
